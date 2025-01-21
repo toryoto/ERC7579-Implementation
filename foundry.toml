@@ -6,6 +6,13 @@ libs = ["node_modules"]
 fs_permissions = [{ access = "read", path = "out-optimized" }]
 allow_paths = ["*", "/"]
 
+[rpc_endpoints]
+default = "https://rpc-testnet.nerochain.io"
+testnet = "https://rpc-testnet.nerochain.io"
+
+[networks]
+testnet = { chain_id = 689, rpc_url = "https://rpc-testnet.nerochain.io" }
+
 [fmt]
 bracket_spacing = true
 int_types = "long"
