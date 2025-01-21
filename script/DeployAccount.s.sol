@@ -28,9 +28,9 @@ import "forge-std/console2.sol";
  */
 contract DeployAccountScript is Script {
     function run() public {
-        MSAFactory factory = MSAFactory(address(0xeffF0157a29286b1B66f59184E1Cc8C95bb69327));
+        MSAFactory factory = MSAFactory(address(0xBa77C865B48Eb105218947A0b2ff77b34Ed9eE2B));
         Bootstrap bootstrap =
-            Bootstrap(payable(address(0xC33673E6a02ac64B90f2b8FaC58f88309DB6238B)));
+            Bootstrap(payable(address(0x87D8f7F7959A8a4Ca572B492909C300ce21113B0)));
         address initialValidator = address(0x11D02847245Df7cF19f48C8907ace59289D8aCEe);
 
         bytes32 salt = bytes32(uint256(1));
