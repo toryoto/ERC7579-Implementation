@@ -14,7 +14,8 @@ contract DeployScript is Script {
     function run() public {
         bytes32 salt = bytes32(uint256(1));
 
-        vm.startBroadcast(vm.envUint("PK"));
+        uint256 privateKey = vm.envUint("PRIVATE_KEY");
+        vm.startBroadcast(privateKey);
 
         // Deploy account and factory
         MSAAdvanced msaAdvanced = new MSAAdvanced{ salt: salt }();
