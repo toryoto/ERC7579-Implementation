@@ -11,6 +11,7 @@ contract MSAFactory {
         implementation = _msaImplementation;
     }
 
+    // payableによりアカウント作成前からガス代分のトークン送金できる
     function createAccount(
         bytes32 salt,
         bytes calldata initCode

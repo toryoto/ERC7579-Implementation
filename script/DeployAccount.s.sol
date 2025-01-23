@@ -55,7 +55,7 @@ contract DeployAccountScript is Script {
             abi.encodeWithSelector(factory.createAccount.selector, salt, _initCode)
         );
 
-        IEntryPoint entryPoint = IEntryPoint(address(0x0000000071727De22E5E9d8BAf0edAc6f37da032));
+        IEntryPoint entryPoint = IEntryPoint(address(0x5FF137D4b0FDCD49DcA30c7CF57E578a026d2789));
 
         // Create the userOp and add the data
         PackedUserOperation memory userOp = getDefaultUserOp();
@@ -76,7 +76,7 @@ contract DeployAccountScript is Script {
 
         console2.log(account);
 
-        vm.startBroadcast(vm.envUint("PK"));
+        vm.startBroadcast(vm.envUint("PRIVATE_KEY"));
 
         entryPoint.handleOps(userOps, payable(address(0x69)));
 

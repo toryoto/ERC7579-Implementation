@@ -37,6 +37,8 @@ contract MSAAdvanced is
     using ECDSA for bytes32;
     using SentinelListLib for SentinelListLib.SentinelList;
 
+    // address private _owner;
+
     /**
      * @inheritdoc IERC7579Account
      * @dev this function is only callable by the entry point or the account itself
@@ -385,6 +387,8 @@ contract MSAAdvanced is
 
         // bootstrap the account
         (address bootstrap, bytes memory bootstrapCall) = abi.decode(data, (address, bytes));
+        // (address owner, address bootstrap, bytes memory bootstrapCall) = abi.decode(data, (address, address, bytes));
+        // _owner = owner;
         _initAccount(bootstrap, bootstrapCall);
     }
 
